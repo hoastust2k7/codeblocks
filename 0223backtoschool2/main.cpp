@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <cmath>
 
 using namespace std;
 
@@ -34,9 +35,21 @@ void fourth() {
 }
 
 void fifth() {
-    int n = 13,113,456,196;
-    sqr(n)
+    float n;
+    n = sqrt(13113456196);
     cout << n << endl;
+}
+
+void homework() {
+    int a, b;
+    cout << "請輸入a：";
+    cin >> a;
+    cout << "請輸入b：";
+    cin >> b;
+    cout << "a + b=" << a << " + " << b << " = " << a + b << endl;
+    cout << "a - b=" << a << " - " << b << " = " << a - b << endl;
+    cout << "a * b=" << a << " * " << b << " = " << a * b << endl;
+    cout << "a / b=" << a << " / " << b << " = " << a / b << endl;
 }
 
 int main() {
@@ -49,6 +62,8 @@ int main() {
     fourth();
     cout << "\n";
     fifth();
+    cout << "\n\n";
+    homework();
 
     return 0;
 }
