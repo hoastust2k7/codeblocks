@@ -22,7 +22,7 @@ void first() {
 void second() {
     float weight1, height1, bmi1;
 
-    cout << "========計算BMI========\n";
+    cout << "========BMI計算程式========\n";
     cout << "輸入你的身高（單位：公尺）：";
     cin >> height1;
     cout << "輸入你的體重（單位：公斤）：";
@@ -44,13 +44,22 @@ void second() {
         cout << bmi1 << " >> 異常範圍 >>> 重度肥胖！" << endl;
     }
     else {
-        cout << bmi1 << "體重過輕" << endl;
+        cout << bmi1 << " >> 體重過輕" << endl;
+    }
+}
+
+void homework() {
+    int n = 6;
+    for(int i = 1; i <= n; i++) {
+        cout << "第" << i << "次" << endl;
+        second();
     }
 }
 
 int main()
 {
     //first();
-    second();
+    //second();
+    homework();
     return 0;
 }
