@@ -34,11 +34,11 @@ void second() {
     cout << "你的BMI是：";
     if(bmi1 >= 18.5 && bmi1 < 24) {
         cout << bmi1 << " >> 正常範圍" << endl;
-    } else if(bmi1 >= 24 && bmi1 < 27) {
+    } else if(bmi1 < 27) {
         cout << bmi1 << " >> 異常範圍 >>> 過重！" << endl;
-    } else if(bmi1 >= 27 && bmi1 < 30) {
+    } else if(bmi1 < 30) {
         cout << bmi1 << " >> 異常範圍 >>> 輕度肥胖！" << endl;
-    } else if(bmi1 >= 30 && bmi1 < 35) {
+    } else if(bmi1 < 35) {
         cout << bmi1 << " >> 異常範圍 >>> 中度肥胖！" << endl;
     } else if(bmi1 >= 35) {
         cout << bmi1 << " >> 異常範圍 >>> 重度肥胖！" << endl;
@@ -53,6 +53,7 @@ void homework() {
     for(int i = 1; i <= n; i++) {
         cout << "第" << i << "次" << endl;
         second();
+        cout << endl;
     }
 }
 
