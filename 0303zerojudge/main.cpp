@@ -33,7 +33,7 @@ void a003() {
 void a004() {
     int year;
     while(cin >> year) {
-        if((year % 4) == 0 && (year % 100) != 0 || (year % 400) == 0) {
+        if((year % 4) == 0 && ((year % 100) != 0 || (year % 400) == 0)) { //(year % 4 != 0 || (year % 100 == 0 && year % 400 != 0)
             cout << "¶|¦~\n\n";
         }
         else {
