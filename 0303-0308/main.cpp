@@ -11,7 +11,7 @@ void tax() {
 
     if(price > 5000000) {
         cout << "價格超過5000000，請重新輸入！" << endl;
-        // return tax();
+        // return ;
     } else if(price < 370000) {
         tax = 0.06;
         total = price * tax;
@@ -66,5 +66,6 @@ int main() {
         total = (370000 * 0.06) + ((990000 - 370000) * 0.13) + ((1980000 - 990000) * 0.21) + ((3720000 - 1980000) * 0.30) + ((price - 3720001) * tax);
         cout << fixed << "扣稅金額：" << setprecision(2) << total << "元" << endl;
     }
+
     return 0;
 }
