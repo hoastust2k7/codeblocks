@@ -1,2 +1,4 @@
 ## vscode settings
-.vscode/*
+.vscode
+bin
+obj

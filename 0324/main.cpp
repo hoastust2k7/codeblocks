@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include <map>
+#include <cmath>
 
 // using namespace std;
 
@@ -11,9 +12,9 @@ void first() {
     int finder = 0;
     while(true) {
         std::ifstream file("./score.csv");
-        std::cout << "½Ð¿é¤J¦W¤l¡]°h¥X½Ð¿é¤J'exit'©Î'°h¥X'¡^¡G";
+        std::cout << "ï¿½Ð¿ï¿½Jï¿½Wï¿½lï¿½]ï¿½hï¿½Xï¿½Ð¿ï¿½J'exit'ï¿½ï¿½'ï¿½hï¿½X'ï¿½^ï¿½G";
         std::cin >> person;
-        if(person == "exit" || person == "°h¥X") {
+        if(person == "exit" || person == "ï¿½hï¿½X") {
             break;
         } else if(file.is_open()) {
             while(file.eof() == 0) {
@@ -24,16 +25,16 @@ void first() {
                 getline(token, score, ',');
                 if(name == person) {
                     finder = 1;
-                    std::cout << name << "³o¦¸¦Ò" << score << "¤À" << std::endl;
+                    std::cout << name << "ï¿½oï¿½ï¿½ï¿½ï¿½" << score << "ï¿½ï¿½" << std::endl;
                     if(stof(score) >= 60) {
-                        std::cout << "¦Ò±o¤£¿ù¡I\n" << std::endl;
+                        std::cout << "ï¿½Ò±oï¿½ï¿½ï¿½ï¿½ï¿½I\n" << std::endl;
                     } else {
-                        std::cout << "­nÄ~Äò¥[ªo\n" << std::endl;
+                        std::cout << "ï¿½nï¿½~ï¿½ï¿½[ï¿½o\n" << std::endl;
                     }
                 }
             }
             if(finder == 0) {
-                std::cout << "¬dµL¦¹¤H" << std::endl;
+                std::cout << "ï¿½dï¿½Lï¿½ï¿½ï¿½H" << std::endl;
             }
             file.close();
             break;
@@ -43,28 +44,49 @@ void first() {
     }
 }
 
-std::map<char, int> table = {
+std::map<char, int> cityNum = {
     {'A', 10}, {'B', 11}, {'C', 12}, {'D', 13}, {'E', 14},
     {'F', 15}, {'G', 16}, {'H', 17}, {'I', 34}, {'J', 18},
     {'K', 19}, {'L', 20}, {'M', 21}, {'N', 22}, {'O', 35},
     {'P', 23}, {'Q', 24}, {'R', 25}, {'S', 26}, {'T', 27},
     {'U', 28}, {'V', 29}, {'W', 32}, {'X', 30}, {'Y', 31},
     {'Z', 33}
-}
-void homework() {
-    std::string id;
-    int aphabet = 0;
-    std::cin >> id;
-    std::cout << id.at(0);
-    if(id.at(0) == '')
+};
 
-    cout << table['A']
+void test() {
+    std::string text = "13123379548";
+    // std::cout << text.at(0) << std::endl;
+    for(int i = 1; i <= 8; i++) {
+        std::cout << i << std::endl;
+    }
+}
+
+void homework() {
+    std::string idChar;
+    int idTotal = 0;
+    std::cout << "è«‹è¼¸å…¥èº«åˆ†è­‰å­—è™Ÿï¼š";
+    std::cin >> idChar;
+    idChar = (std::to_string(cityNum[idChar.at(0)]) + idChar.substr(1));
+    idTotal = idChar.at(0) - '0' + (idChar.at(1) - '0') * 9;
+    std::cout << idTotal << std::endl;
+    for(int i = 1; i <= 8; i++) {
+        idTotal += (idChar.at(i + 1) - '0') * (9 - i);
+    }
+    idTotal += (idChar.at(10) - '0');
+    std::cout << idTotal << std::endl;
+
+    if(idTotal % 10 == 0) {
+        std::cout << "real" << std::endl;
+    } else {
+        std::cout << "fake" << std::endl;
+    }
 }
 
 int main() {
-//    cout << "Hello world!" << endl;
-//    first();
-//    second();
+    // cout << "Hello world!" << endl;
+    // first();
+    // second();
     homework();
+    // test();
     return 0;
 }

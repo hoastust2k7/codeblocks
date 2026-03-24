@@ -41,28 +41,33 @@ void fifth() {
 }
 
 void homework() {
-    int a, b;
-    cout << "½Ð¿é¤Ja¡G";
-    cin >> a;
-    cout << "½Ð¿é¤Jb¡G";
-    cin >> b;
-    cout << "a + b=" << a << " + " << b << " = " << a + b << endl;
-    cout << "a - b=" << a << " - " << b << " = " << a - b << endl;
-    cout << "a * b=" << a << " * " << b << " = " << a * b << endl;
-    cout << "a / b=" << a << " / " << b << " = " << a / b << endl;
+    while(true) {
+        int a, b;
+        cout << "è«‹è¼¸å…¥aï¼š";
+        cin >> a;
+        cout << "è«‹è¼¸å…¥bï¼š";
+        cin >> b;
+        if(a == 0 && b == 0) {
+            break;
+        }
+        cout << "a + b = " << a << " + " << b << " = " << a + b << endl;
+        cout << "a - b = " << a << " - " << b << " = " << a - b << endl;
+        cout << "a * b = " << a << " * " << b << " = " << a * b << endl;
+        cout << "a / b = " << a << " / " << b << " = " << a / b << endl;
+    }
 }
 
 int main() {
-    first();
-    cout << "\n";
-    second();
-    cout << "\n";
-    third();
-    cout << "\n";
-    fourth();
-    cout << "\n";
-    fifth();
-    cout << "\n\n";
+    // first();
+    // cout << "\n";
+    // second();
+    // cout << "\n";
+    // third();
+    // cout << "\n";
+    // fourth();
+    // cout << "\n";
+    // fifth();
+    // cout << "\n\n";
     homework();
 
     return 0;
