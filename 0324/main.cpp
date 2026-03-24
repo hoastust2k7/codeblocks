@@ -3,7 +3,6 @@
 #include <fstream>
 #include <sstream>
 #include <map>
-#include <cmath>
 
 // using namespace std;
 
@@ -53,28 +52,24 @@ std::map<char, int> cityNum = {
     {'Z', 33}
 };
 
-void test() {
-    std::string text = "13123379548";
-    // std::cout << text.at(0) << std::endl;
-    for(int i = 1; i <= 8; i++) {
-        std::cout << i << std::endl;
-    }
-}
+// void test() {
+//     std::string text = "13123379548";
+//     // std::cout << text.at(0) << std::endl;
+//     for(int i = 1; i <= 8; i++) {
+//         std::cout << i << std::endl;
+//     }
+// }
 
 void homework() {
     std::string idChar;
     int idTotal = 0;
-    std::cout << "請輸入身分證字號：";
     std::cin >> idChar;
     idChar = (std::to_string(cityNum[idChar.at(0)]) + idChar.substr(1));
     idTotal = idChar.at(0) - '0' + (idChar.at(1) - '0') * 9;
-    std::cout << idTotal << std::endl;
     for(int i = 1; i <= 8; i++) {
         idTotal += (idChar.at(i + 1) - '0') * (9 - i);
     }
     idTotal += (idChar.at(10) - '0');
-    std::cout << idTotal << std::endl;
-
     if(idTotal % 10 == 0) {
         std::cout << "real" << std::endl;
     } else {
