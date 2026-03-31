@@ -95,18 +95,20 @@ void fourth() {
 }
 
 void fifth() {
-    bool cityValueFound = false;
-    std::string data, siteName, uvi, unit, county, wgs84_lon, wgs84_lat, dataCreationDate, cityValue;
+    bool valueFound = false;
+    std::string data, siteName, uvi, unit, county, wgs84_lon, wgs84_lat, dataCreationDate, cityValue, dateValue;
+    std::cout << "--------------------------------" << std::endl;
     std::cout << "請輸入縣市：";
     std::cin >> cityValue;
+    std::cout << "請輸入日期：";
+    std::cin >> dateValue;
     std::cout << "--------------------------------" << std::endl;
-    std::ifstream myFile("C:\\Users\\STUST\\codeblocks\\0330\\Preview_Data.csv");
+    std::ifstream myFile("./Preview_Data.csv");
     if(myFile.is_open() ) {
         // getline(myFile, data);
         while(myFile.eof() == 0) {
             getline(myFile, data);
             std::stringstream token(data);
-
             getline(token, siteName, ',');
             getline(token, uvi, ',');
             getline(token, unit, ',');
@@ -114,9 +116,10 @@ void fifth() {
             getline(token, wgs84_lon, ',');
             getline(token, wgs84_lat, ',');
             getline(token, dataCreationDate, ',');
-
-            if((county.find(cityValue)) != std::string::npos || (dataCreationDate.find(cityValue)) != std::string::npos) {
-                cityValueFound = true;
+            // std::cout << dataCreationDate;
+            if((county.find(cityValue)) != std::string::npos &&
+               (dataCreationDate.find(dateValue)) != std::string::npos) {
+                valueFound = true;
                 std::cout << "================================" << std::endl;
                 std::cout << "測站名稱：" << siteName << std::endl;
                 std::cout << "紫外線指數：" << uvi << std::endl;
@@ -127,13 +130,13 @@ void fifth() {
                 std::cout << "資料發布日期：" << dataCreationDate << std::endl;
                 std::cout << "================================" << std::endl;
             }
-            if(!cityValueFound) {
-                std::cerr << "404\n";
-            }
+        }
+        if(!valueFound) {
+            std::cerr << "Data 404\n";
         }
         myFile.close();
     } else {
-        std::cerr << "404\n";
+        std::cerr << "File 404\n";
     }
 }
 
