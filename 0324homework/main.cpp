@@ -5,7 +5,7 @@
 using namespace std;
 
 int main() {
-    map<char, int> cityNum = {
+    map <char, int> cityNum = {
         {'A', 10}, {'B', 11}, {'C', 12}, {'D', 13}, {'E', 14},
         {'F', 15}, {'G', 16}, {'H', 17}, {'I', 34}, {'J', 18},
         {'K', 19}, {'L', 20}, {'M', 21}, {'N', 22}, {'O', 35},
@@ -16,7 +16,7 @@ int main() {
 
     string idChar;
     int idTotal = 0;
-    
+
     cin >> idChar;
     idChar = (to_string(cityNum[idChar.at(0)]) + idChar.substr(1));
     idTotal = idChar.at(0) - '0' + (idChar.at(1) - '0') * 9;
@@ -24,7 +24,7 @@ int main() {
         idTotal += (idChar.at(i + 1) - '0') * (9 - i);
     }
     idTotal += (idChar.at(10) - '0');
-    
+
     if(idTotal % 10 == 0) {
         cout << "real" << endl;
     } else {
