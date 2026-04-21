@@ -1,0 +1,45 @@
+#include <iostream>
+#include <sstream>
+#include <iomanip>
+
+using namespace std;
+
+void a050() {
+    string inputData, city, cityName, cityValue;
+    cin >> inputData;
+    stringstream token(inputData);
+    getline(token, city, ',');
+    getline(token, cityName, ',');
+    getline(token, cityValue, ',');
+    cout << city;
+    if(stoi(cityValue) <= 50) {
+        cout << "PM2.5=" << cityValue << " μg/m3 " << "良好";
+    } else if(stoi(cityValue) <= 100) {
+        cout << "PM2.5=" << cityValue << " μg/m3 " << "普通";
+    } else if(stoi(cityValue) <= 150) {
+        cout << "PM2.5=" << cityValue << " μg/m3 " << "對敏感族群不健康";
+    } else if(stoi(cityValue) <= 200) {
+        cout << "PM2.5=" << cityValue << " μg/m3 " << "對所有族群不健康";
+    } else if(stoi(cityValue) <= 300) {
+        cout << "PM2.5=" << cityValue << " μg/m3 " << "非常不健康";
+    } else {
+        cout << "PM2.5=" << cityValue << " μg/m3 " << "危害";
+    }
+}
+
+void a068() {
+}
+
+void a069() {
+    float height, weight, total;
+    cin >> height >> weight;
+    total = weight / ((height / 100) * (height / 100));
+    cout << fixed << setprecision(1) << total;
+}
+
+int main() {
+    // a050();
+    // a069();
+    // cout << "Hello world!" << endl;
+    return 0;
+}
