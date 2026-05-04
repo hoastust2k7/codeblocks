@@ -62,29 +62,29 @@ void third() {
 int main(int argc, char *argv[]) {
     // first();
     // second();
-    // third();
+    third();
     // std::cout << argc << std::endl;
     // for(int i = 0; i < argc; i++) {
     //     std::cout << argv[i] << std::endl;
     // }
-    float firstNum, secondNum, resultNum;
-    std::string text;
-    firstNum = std::stof(argv[1]);
-    text = argv[2];
-    secondNum = std::stof(argv[3]);
-    if(text == "+") {
-        resultNum = firstNum + secondNum;
-        std::cout << resultNum << std::endl;
-    } else if(text == "-") {
-        resultNum = firstNum - secondNum;
-        std::cout << resultNum << std::endl;
-    } else if(text == argv[2]) {
-        resultNum = firstNum * secondNum;
-        std::cout << resultNum << std::endl;
-    } else if(text == "/") {
-        resultNum = firstNum / secondNum;
-        std::cout << resultNum << std::endl;
-    }
+    // float firstNum, secondNum, resultNum;
+//     std::string text;
+//     firstNum = std::stof(argv[1]);
+//     text = argv[2];
+//     secondNum = std::stof(argv[3]);
+//     if(text == "+") {
+//         resultNum = firstNum + secondNum;
+//         std::cout << resultNum << std::endl;
+//     } else if(text == "-") {
+//         resultNum = firstNum - secondNum;
+//         std::cout << resultNum << std::endl;
+//     } else if(text == argv[2]) {
+//         resultNum = firstNum * secondNum;
+//         std::cout << resultNum << std::endl;
+//     } else if(text == "/") {
+//         resultNum = firstNum / secondNum;
+//         std::cout << resultNum << std::endl;
+//     }
 
 
     // std::cout << argc << std::endl;
