@@ -116,7 +116,7 @@ void homework1() {
         if (inputSelect == 1) {
             for (int k = 0; k < i - 1; k++) {
                 for (int j = 0; j < i - k - 1; j++) {
-                    if (stof(isFirstScore[j]) > stof(isFirstScore[j + 1])) {
+                    if (stof(isFirstScore[j]) < stof(isFirstScore[j + 1])) {
                         std::string tmp;
                         tmp = isID[j]; isID[j] = isID[j + 1]; isID[j + 1] = tmp;
                         tmp = isName[j]; isName[j] = isName[j + 1]; isName[j + 1] = tmp;
@@ -129,7 +129,7 @@ void homework1() {
         } else if (inputSelect == 2) {
             for (int k = 0; k < i - 1; k++) {
                 for (int j = 0; j < i - k - 1; j++) {
-                    if (stof(isSecondScore[j]) > stof(isSecondScore[j + 1])) {
+                    if (stof(isSecondScore[j]) < stof(isSecondScore[j + 1])) {
                         std::string tmp;
                         tmp = isID[j]; isID[j] = isID[j + 1]; isID[j + 1] = tmp;
                         tmp = isName[j]; isName[j] = isName[j + 1]; isName[j + 1] = tmp;
