@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1777952304 source:c:\users\stust\codeblocks\0505001\main.cpp
+	<iostream>
+	"func-a.hpp"
+	"func-b.hpp"
+
+1777951567 c:\users\stust\codeblocks\0505001\func.hpp
+
+1777951567 c:\users\stust\codeblocks\0505001\func-b.hpp
+
+1777952132 source:c:\users\stust\codeblocks\0505001\func-b.cpp
+	"func-b.hpp"
+	<iostream>
+
+1777951926 c:\users\stust\codeblocks\0505001\func-a.hpp
+
+1777952133 source:c:\users\stust\codeblocks\0505001\func-a.cpp
+	"func-a.hpp"
+	<iostream>
+
