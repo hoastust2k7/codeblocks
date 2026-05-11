@@ -14,6 +14,7 @@ void first() {
         std::cout << arrayNum[i] << " ";
     }
     std::cout << std::endl;
+
     for (int j = 0; j < arrayNumLenght - 1; j++) {
         for (int i = 0; i < arrayNumLenght - j - 1; i++) {
             if (arrayNum[i] > arrayNum[i + 1]) {
@@ -84,11 +85,11 @@ void third() {
     }
 }
 
-void homework1() {
+void homework1(int N) {
     int inputSelect;
     std::cout << "請排序方式（1：選擇填充，2：實作，3：選擇填充+實作）：";
     std::cin >> inputSelect;
-    int N = 47, i;
+    int i;
     std::string isID[N], isName[N], isFirstScore[N], isSecondScore[N], isTotalScore[N];
     std::ifstream midExam("./midExam.csv");
     std::string data;
@@ -193,11 +194,32 @@ void homework1() {
     }
 }
 
+void arrCount() {
+    int arrWasCount = 0;
+    std::ifstream midExam("./midExam.csv");
+    std::string data;
+    if(midExam.is_open()) {
+        getline(midExam, data);
+        while(midExam.eof() == 0) {
+            getline(midExam, data);
+            arrWasCount++;
+        }
+        std::cout << arrWasCount;
+        midExam.close();
+    } else {
+        std::cerr << "File 404\n";
+    }
+    // homework1(arrWasCount);
+}
+
 int main() {
     system("PAUSE");
     // first();
     // third();
-    homework1();
+    arrCount();
+    // std::cout << arrWasCount;
+
+    // homework1();
     // cout << "Hello world!" << endl;
     return 0;
 }
