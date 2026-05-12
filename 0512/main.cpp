@@ -21,7 +21,7 @@ void sorting(int arrNum[], int arrNumLen) {
         }
     }
 
-    std::cout << "°}¦C±Æ§Ç«á¡G" << std::endl;
+    std::cout << "é™£åˆ—æŽ’åºå¾Œï¼š" << std::endl;
     for (int i = 0; i < arrNumLen; i++) {
         std::cout << arrNum[i] << " ";
     }
@@ -33,14 +33,14 @@ void calcing(int arrNum[], int arrNumLen) {
     int smallArrNum = arrNum[(arrNumLen / arrNumLen) - 1];
     int largeArrNum = arrNum[arrNumLen - 1];
     float averArrNum;
-    std::cout << "³Ì¤p­È¡G" << smallArrNum << std::endl;
-    std::cout << "³Ì¤j­È¡G" << largeArrNum << std::endl;
+    std::cout << "æœ€å°å€¼ï¼š" << smallArrNum << std::endl;
+    std::cout << "æœ€å¤§å€¼ï¼š" << largeArrNum << std::endl;
 
     for (int i = 0; i < arrNumLen; i++) {
         averArrNum += arrNum[i];
     }
     averArrNum = averArrNum / arrNumLen;
-    std::cout << std::fixed << std::setprecision(1) << "¥­§¡­È¡G" << averArrNum;
+    std::cout << std::fixed << std::setprecision(1) << "å¹³å‡å€¼ï¼š" << averArrNum;
 }
 
 int dataing() {
@@ -50,7 +50,7 @@ int dataing() {
     data = new int[dataLen];
 
     for (int i = 0; i < dataLen; i++) {
-        std::cout << "²Ä" << i + 1 << "¾ã¼Æ¡G";
+        std::cout << "ç¬¬" << i + 1 << "æ•´æ•¸ï¼š";
         std::cin >> data[i];
     }
     priArr(data, dataLen);
@@ -82,8 +82,7 @@ void arrCount() {
 
         int i = 0;
         getline(midExam, data);
-        while(midExam.eof() == 0) {
-            getline(midExam, data);
+        while(getline(midExam, data)) {
             std::stringstream token(data);
             getline(token, isID[i], ',');
             getline(token, isName[i], ',');
