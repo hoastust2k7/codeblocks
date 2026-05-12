@@ -99,7 +99,8 @@ void calcMidExam(std::string isID[], std::string isName[], std::string isFirstSc
 void readingMidExam() {
     int arrWasCount = 0;
     int inputSelect = 2;
-    std::ifstream midExam("./midExam.csv");
+    // std::ifstream midExam("./csieMidExam.csv");
+    std::ifstream midExam("./MidExam.csv");
     std::string data;
     std::string *isID, *isName, *isFirstScore, *isSecondScore, *isTotalScore;
     if(midExam.is_open()) {
@@ -129,9 +130,9 @@ void readingMidExam() {
             i++;
         }
 
-	sortingMidExam(isID, isName, isFirstScore, isSecondScore, isTotalScore, arrWasCount);
-	printMidExam(isID, isName, isFirstScore, isSecondScore, isTotalScore, arrWasCount);
-	calcMidExam(isID, isName, isFirstScore, isSecondScore, isTotalScore, arrWasCount);
+	    sortingMidExam(isID, isName, isFirstScore, isSecondScore, isTotalScore, arrWasCount);
+	    printMidExam(isID, isName, isFirstScore, isSecondScore, isTotalScore, arrWasCount);
+	    calcMidExam(isID, isName, isFirstScore, isSecondScore, isTotalScore, arrWasCount);
 
         delete [] isID;
         delete [] isName;

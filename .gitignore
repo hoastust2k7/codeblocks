@@ -1,4 +1,5 @@
 ## vscode settings
 .vscode
+## build files
 bin
 obj
