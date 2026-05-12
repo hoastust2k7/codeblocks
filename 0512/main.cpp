@@ -44,7 +44,7 @@ void calcing(int arrNum[], int arrNumLen) {
     std::cout << std::fixed << std::setprecision(1) << "平均值：" << averArrNum;
 }
 
-int dataing() {
+void dataing() {
     int dataLen;
     int *data;
     std::cin >> dataLen;
@@ -77,29 +77,26 @@ void sortingMidExam(std::string isID[], std::string isName[], std::string isFirs
 
 void printMidExam(std::string isID[], std::string isName[], std::string isFirstScore[], std::string isSecondScore[], std::string isTotalScore[], int arrWasCount) {
     for (int i = 0; i < arrWasCount; i++) {
-	// std::cout << arr[i] << " ";
 	std::cout << i + 1 << ". " << isID[i] << " " << isName[i] << " " << isFirstScore[i] << " " << isSecondScore[i] << " " << isTotalScore[i] << std::endl;
     }
     std::cout << std::endl;
 }
 
 void calcMidExam(std::string isID[], std::string isName[], std::string isFirstScore[], std::string isSecondScore[], std::string isTotalScore[], int arrWasCount) {
-    float isTotalScoreAver;
+    float isTotalScoreAver = 0.0f;
     int isTotalScoreLowest = std::stof(isTotalScore[arrWasCount - 1]);
     int isTotalScoreHighest = std::stof(isTotalScore[(arrWasCount / arrWasCount) - 1]);
     std::cout << "最小值：" << isTotalScoreLowest << std::endl;
     std::cout << "最大值：" << isTotalScoreHighest << std::endl;
 
     for (int i = 0; i < arrWasCount; i++) {
-	// isTotalScoreAver += isTotalScore[i];
 	isTotalScoreAver += std::stof(isTotalScore[i]);
-	// std::cout << isTotalScore[i] << std::endl;
     }
-    isTotalScoreAver = isTotalScoreAver / 47;
+    isTotalScoreAver = isTotalScoreAver / arrWasCount;
     std::cout << std::fixed << std::setprecision(1) << "平均值：" << isTotalScoreAver << std::endl;
 }
 
-int readingMidExam() {
+void readingMidExam() {
     int arrWasCount = 0;
     int inputSelect = 2;
     std::ifstream midExam("./midExam.csv");
@@ -110,8 +107,7 @@ int readingMidExam() {
         while(getline(midExam, data)) {
             arrWasCount++;
         }
-        std::cout << "Total Array: " << arrWasCount << std::endl;
-        
+
 	midExam.clear();
         midExam.seekg(0, std::ios::beg);
 
