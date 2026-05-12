@@ -1,7 +1,8 @@
 #include <iostream>
-#include <iomanip>
 #include <fstream>
 #include <string>
+#include <sstream>
+#include <iomanip>
 
 void priArr(int arr[], int n) {
     for (int i = 0; i < n; i++) {
@@ -59,7 +60,46 @@ int dataing() {
     delete [] data;
 }
 
-void arrCount() {
+void sortingMidExam(std::string isID[], std::string isName[], std::string isFirstScore[], std::string isSecondScore[], std::string isTotalScore[], int arrWasCount) {
+    for (int j = 0; j < arrWasCount - 1; j++) {
+	for (int i = 0; i < arrWasCount - j - 1; i++) {
+	    if (stof(isTotalScore[i]) < stof(isTotalScore[i + 1])) {
+	    	std::string temp;
+		temp = isID[i]; isID[i] = isID[i + 1]; isID[i + 1] = temp;
+		temp = isName[i]; isName[i] = isName[i + 1]; isName[i + 1] = temp;
+		temp = isFirstScore[i]; isFirstScore[i] = isFirstScore[i + 1]; isFirstScore[i + 1] = temp;
+		temp = isSecondScore[i]; isSecondScore[i] = isSecondScore[i + 1]; isSecondScore[i + 1] = temp;
+		temp = isTotalScore[i]; isTotalScore[i] = isTotalScore[i + 1]; isTotalScore[i + 1] = temp;
+	    }
+	}
+    }
+}
+
+void printMidExam(std::string isID[], std::string isName[], std::string isFirstScore[], std::string isSecondScore[], std::string isTotalScore[], int arrWasCount) {
+    for (int i = 0; i < arrWasCount; i++) {
+	// std::cout << arr[i] << " ";
+	std::cout << i + 1 << ". " << isID[i] << " " << isName[i] << " " << isFirstScore[i] << " " << isSecondScore[i] << " " << isTotalScore[i] << std::endl;
+    }
+    std::cout << std::endl;
+}
+
+void calcMidExam(std::string isID[], std::string isName[], std::string isFirstScore[], std::string isSecondScore[], std::string isTotalScore[], int arrWasCount) {
+    float isTotalScoreAver;
+    int isTotalScoreLowest = std::stof(isTotalScore[arrWasCount - 1]);
+    int isTotalScoreHighest = std::stof(isTotalScore[(arrWasCount / arrWasCount) - 1]);
+    std::cout << "最小值：" << isTotalScoreLowest << std::endl;
+    std::cout << "最大值：" << isTotalScoreHighest << std::endl;
+
+    for (int i = 0; i < arrWasCount; i++) {
+	// isTotalScoreAver += isTotalScore[i];
+	isTotalScoreAver += std::stof(isTotalScore[i]);
+	// std::cout << isTotalScore[i] << std::endl;
+    }
+    isTotalScoreAver = isTotalScoreAver / 47;
+    std::cout << std::fixed << std::setprecision(1) << "平均值：" << isTotalScoreAver << std::endl;
+}
+
+int readingMidExam() {
     int arrWasCount = 0;
     int inputSelect = 2;
     std::ifstream midExam("./midExam.csv");
@@ -70,8 +110,9 @@ void arrCount() {
         while(getline(midExam, data)) {
             arrWasCount++;
         }
-        std::cout << arrWasCount << std::endl;
-        midExam.clear();
+        std::cout << "Total Array: " << arrWasCount << std::endl;
+        
+	midExam.clear();
         midExam.seekg(0, std::ios::beg);
 
         isID = new std::string[arrWasCount];
@@ -91,15 +132,10 @@ void arrCount() {
             getline(token, isTotalScore[i]);
             i++;
         }
-        for (int j = 0; j < i; j++) {
-            if (inputSelect == 1) {
-                std::cout << j + 1 << " " << isName[j] << " " << isFirstScore[j] << std::endl;
-            } else if (inputSelect == 2) {
-                std::cout << j + 1 << " " << isName[j] << " " << isSecondScore[j] << std::endl;
-            } else {
-                std::cout << j + 1 << " " << isName[j] << " " << isTotalScore[j] << std::endl;
-            }
-        }
+
+	sortingMidExam(isID, isName, isFirstScore, isSecondScore, isTotalScore, arrWasCount);
+	printMidExam(isID, isName, isFirstScore, isSecondScore, isTotalScore, arrWasCount);
+	calcMidExam(isID, isName, isFirstScore, isSecondScore, isTotalScore, arrWasCount);
 
         delete [] isID;
         delete [] isName;
@@ -113,8 +149,8 @@ void arrCount() {
 }
 
 int main() {
-    system("PAUSE");
+    // system("PAUSE");
     // dataing();
-    arrCount();
+    readingMidExam();
     return 0;
 }
