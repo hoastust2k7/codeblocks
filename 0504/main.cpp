@@ -85,10 +85,11 @@ void third() {
     }
 }
 
-void homework1(int N) {
-    int inputSelect;
+void homework1() {
+    int inputSelect = 1;
+    int N = 47;
     std::cout << "請排序方式（1：選擇填充，2：實作，3：選擇填充+實作）：";
-    std::cin >> inputSelect;
+    //std::cin >> inputSelect;
     int i;
     std::string isID[N], isName[N], isFirstScore[N], isSecondScore[N], isTotalScore[N];
     std::ifstream midExam("./midExam.csv");
@@ -216,10 +217,9 @@ int main() {
     system("PAUSE");
     // first();
     // third();
-    arrCount();
     // std::cout << arrWasCount;
 
-    // homework1();
+    homework1();
     // cout << "Hello world!" << endl;
     return 0;
 }
