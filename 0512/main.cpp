@@ -100,7 +100,6 @@ void calcMidExam(std::string totalScore[], int arrWasCount) {
 
 void readingMidExam() {
     int arrWasCount = 0;
-    int inputSelect = 2;
     // std::ifstream midExam("./csieMidExam.csv");
     std::ifstream midExam("./MidExam.csv");
     std::string data;
