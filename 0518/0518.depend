@@ -1,4 +1,5 @@
 # depslib dependency file v1.0
-1779069511 source:c:\users\stust\codeblocks\0518\main.cpp
+1779074494 source:c:\users\stust\codeblocks\0518\main.cpp
 	<iostream>
+	<iomanip>
 
