@@ -33,18 +33,18 @@ void calcMidExam(std::string totalScore[], int arrWasCount) {
     float totalScoreAver = 0.0;
     int totalScoreLowest = std::stof(totalScore[arrWasCount - 1]);
     int totalScoreHighest = std::stof(totalScore[(arrWasCount / arrWasCount) - 1]);
-    std::cout << "³Ì¤p­È¡G" << totalScoreLowest << std::endl;
-    std::cout << "³Ì¤j­È¡G" << totalScoreHighest << std::endl;
+    std::cout << "æœ€å°å€¼ï¼š" << totalScoreLowest << std::endl;
+    std::cout << "æœ€å¤§å€¼ï¼š" << totalScoreHighest << std::endl;
 
     for (int i = 0; i < arrWasCount; i++) {
         totalScoreAver += std::stof(totalScore[i]);
     }
-    std::cout << std::fixed << std::setprecision(1) << "¥­§¡­È¡G" << totalScoreAver / arrWasCount << std::endl;
+    std::cout << std::fixed << std::setprecision(1) << "å¹³å‡å€¼ï¼š" << totalScoreAver / arrWasCount << std::endl;
 }
 
 void readingMidExam() {
     int arrWasCount = 0;
-    // std::ifstream midExam("./csieMidExam.csv");
+    //std::ifstream midExam("./csieMidExam.csv");
     std::ifstream midExam("./MidExam.csv");
     std::string data;
     std::string * id, *name, *firstScore, *secondScore, *totalScore;
@@ -92,7 +92,7 @@ void readingMidExam() {
 }
 
 int main(int argc, char *argv[]) {
-    // system("PAUSE");
+    system("PAUSE");
     readingMidExam();
     return 0;
 }
