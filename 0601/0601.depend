@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1780282592 source:c:\users\stust\codeblocks\0601\include\person.h
+	<iostream>
+	<string>
+
+1780281805 source:c:\users\stust\codeblocks\0601\include\student.h
+	<iostream>
+	<string>
+	"person.h"
+
+1780286412 c:\users\stust\codeblocks\0601\include\person.h
+	<iostream>
+	<string>
+
+1780285664 source:c:\users\stust\codeblocks\0601\src\person.cpp
+	"../include/person.h"
+
+1780286320 source:c:\users\stust\codeblocks\0601\src\student.cpp
+	"../include/student.h"
+
+1780283617 c:\users\stust\codeblocks\0601\include\student.h
+	<iostream>
+	<string>
+	"person.h"
+
+1780286350 source:c:\users\stust\codeblocks\0601\main.cpp
+	<iostream>
+	"include/person.h"
+	"include/student.h"
+
