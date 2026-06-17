@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1781578507 source:c:\users\stust\desktop\0616-3-exam\main.cpp
+	<iostream>
+
+1781581036 source:c:\users\stust\desktop\0616\0616-3-exam\main.cpp
+	<iostream>
+	<fstream>
+
